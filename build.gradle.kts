@@ -1,5 +1,3 @@
-import org.gradle.jvm.tasks.Jar
-
 plugins {
     java
     kotlin("jvm") version embeddedKotlinVersion
