@@ -1,25 +1,49 @@
-Benchmark                                                  Mode      Cnt     Score    Error   Units
-CompareInlineUseVsLambdaUse.inlineUse                     thrpt      100     1.173 ▒  0.004  ops/us
-CompareInlineUseVsLambdaUse.lambdaUse                     thrpt      100     1.169 ▒  0.006  ops/us
-CompareInlineUseVsLambdaUse.inlineUse                      avgt      100     0.863 ▒  0.006   us/op
-CompareInlineUseVsLambdaUse.lambdaUse                      avgt      100     0.848 ▒  0.002   us/op
-CompareInlineUseVsLambdaUse.inlineUse                    sample  3322298     0.978 ▒  0.003   us/op
-CompareInlineUseVsLambdaUse.inlineUse:inlineUse╖p0.00    sample              0.584            us/op
-CompareInlineUseVsLambdaUse.inlineUse:inlineUse╖p0.50    sample              0.877            us/op
-CompareInlineUseVsLambdaUse.inlineUse:inlineUse╖p0.90    sample              1.168            us/op
-CompareInlineUseVsLambdaUse.inlineUse:inlineUse╖p0.95    sample              1.460            us/op
-CompareInlineUseVsLambdaUse.inlineUse:inlineUse╖p0.99    sample              1.462            us/op
-CompareInlineUseVsLambdaUse.inlineUse:inlineUse╖p0.999   sample             14.016            us/op
-CompareInlineUseVsLambdaUse.inlineUse:inlineUse╖p0.9999  sample             59.904            us/op
-CompareInlineUseVsLambdaUse.inlineUse:inlineUse╖p1.00    sample           1159.168            us/op
-CompareInlineUseVsLambdaUse.lambdaUse                    sample  3546681     0.914 ▒  0.002   us/op
-CompareInlineUseVsLambdaUse.lambdaUse:lambdaUse╖p0.00    sample              0.584            us/op
-CompareInlineUseVsLambdaUse.lambdaUse:lambdaUse╖p0.50    sample              0.877            us/op
-CompareInlineUseVsLambdaUse.lambdaUse:lambdaUse╖p0.90    sample              0.877            us/op
-CompareInlineUseVsLambdaUse.lambdaUse:lambdaUse╖p0.95    sample              1.168            us/op
-CompareInlineUseVsLambdaUse.lambdaUse:lambdaUse╖p0.99    sample              1.460            us/op
-CompareInlineUseVsLambdaUse.lambdaUse:lambdaUse╖p0.999   sample             13.440            us/op
-CompareInlineUseVsLambdaUse.lambdaUse:lambdaUse╖p0.9999  sample             55.808            us/op
-CompareInlineUseVsLambdaUse.lambdaUse:lambdaUse╖p1.00    sample           1273.856            us/op
-CompareInlineUseVsLambdaUse.inlineUse                        ss      100   189.264 ▒ 12.921   us/op
-CompareInlineUseVsLambdaUse.lambdaUse                        ss      100   187.827 ▒ 14.642   us/op
+Benchmark                                       Mode     Cnt    Score    Error  Units
+ToGreenOrNotToGreen.classicThread              thrpt      25   73.884 ±  2.379  ops/s
+ToGreenOrNotToGreen.coroutineClassic           thrpt      25  676.107 ±  2.994  ops/s
+ToGreenOrNotToGreen.coroutineGreen             thrpt      25  618.095 ±  3.134  ops/s
+ToGreenOrNotToGreen.greenThread                thrpt      25  629.459 ±  6.373  ops/s
+ToGreenOrNotToGreen.classicThread               avgt      25    1.417 ±  0.028   s/op
+ToGreenOrNotToGreen.coroutineClassic            avgt      25    0.149 ±  0.001   s/op
+ToGreenOrNotToGreen.coroutineGreen              avgt      25    0.146 ±  0.008   s/op
+ToGreenOrNotToGreen.greenThread                 avgt      25    0.152 ±  0.007   s/op
+ToGreenOrNotToGreen.classicThread             sample   17784    1.398 ±  0.001   s/op
+ToGreenOrNotToGreen.classicThread:p0.00       sample            1.330            s/op
+ToGreenOrNotToGreen.classicThread:p0.50       sample            1.401            s/op
+ToGreenOrNotToGreen.classicThread:p0.90       sample            1.409            s/op
+ToGreenOrNotToGreen.classicThread:p0.95       sample            1.409            s/op
+ToGreenOrNotToGreen.classicThread:p0.99       sample            1.413            s/op
+ToGreenOrNotToGreen.classicThread:p0.999      sample            1.420            s/op
+ToGreenOrNotToGreen.classicThread:p0.9999     sample            1.422            s/op
+ToGreenOrNotToGreen.classicThread:p1.00       sample            1.424            s/op
+ToGreenOrNotToGreen.coroutineClassic          sample  169225    0.147 ±  0.001   s/op
+ToGreenOrNotToGreen.coroutineClassic:p0.00    sample            0.111            s/op
+ToGreenOrNotToGreen.coroutineClassic:p0.50    sample            0.148            s/op
+ToGreenOrNotToGreen.coroutineClassic:p0.90    sample            0.150            s/op
+ToGreenOrNotToGreen.coroutineClassic:p0.95    sample            0.151            s/op
+ToGreenOrNotToGreen.coroutineClassic:p0.99    sample            0.152            s/op
+ToGreenOrNotToGreen.coroutineClassic:p0.999   sample            0.154            s/op
+ToGreenOrNotToGreen.coroutineClassic:p0.9999  sample            0.155            s/op
+ToGreenOrNotToGreen.coroutineClassic:p1.00    sample            0.155            s/op
+ToGreenOrNotToGreen.coroutineGreen            sample  155302    0.160 ±  0.001   s/op
+ToGreenOrNotToGreen.coroutineGreen:p0.00      sample            0.117            s/op
+ToGreenOrNotToGreen.coroutineGreen:p0.50      sample            0.161            s/op
+ToGreenOrNotToGreen.coroutineGreen:p0.90      sample            0.162            s/op
+ToGreenOrNotToGreen.coroutineGreen:p0.95      sample            0.163            s/op
+ToGreenOrNotToGreen.coroutineGreen:p0.99      sample            0.163            s/op
+ToGreenOrNotToGreen.coroutineGreen:p0.999     sample            0.165            s/op
+ToGreenOrNotToGreen.coroutineGreen:p0.9999    sample            0.175            s/op
+ToGreenOrNotToGreen.coroutineGreen:p1.00      sample            0.175            s/op
+ToGreenOrNotToGreen.greenThread               sample  158124    0.157 ±  0.001   s/op
+ToGreenOrNotToGreen.greenThread:p0.00         sample            0.113            s/op
+ToGreenOrNotToGreen.greenThread:p0.50         sample            0.158            s/op
+ToGreenOrNotToGreen.greenThread:p0.90         sample            0.159            s/op
+ToGreenOrNotToGreen.greenThread:p0.95         sample            0.160            s/op
+ToGreenOrNotToGreen.greenThread:p0.99         sample            0.160            s/op
+ToGreenOrNotToGreen.greenThread:p0.999        sample            0.162            s/op
+ToGreenOrNotToGreen.greenThread:p0.9999       sample            0.163            s/op
+ToGreenOrNotToGreen.greenThread:p1.00         sample            0.163            s/op
+ToGreenOrNotToGreen.classicThread                 ss       5    0.788 ±  0.009   s/op
+ToGreenOrNotToGreen.coroutineClassic              ss       5    0.183 ±  0.007   s/op
+ToGreenOrNotToGreen.coroutineGreen                ss       5    0.212 ±  0.027   s/op
+ToGreenOrNotToGreen.greenThread                   ss       5    0.173 ±  0.009   s/op
