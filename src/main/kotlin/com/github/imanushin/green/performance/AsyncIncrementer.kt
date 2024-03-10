@@ -3,12 +3,22 @@ package com.github.imanushin.green.performance
 import kotlinx.coroutines.*
 import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors
+import java.util.concurrent.ThreadFactory
 
 object AsyncIncrementer {
     private const val THREAD_POOL_SIZE = 10
     private const val NUMBER_OF_DELAYS = 100
 
-    private val classicThreadPool = Executors.newScheduledThreadPool(THREAD_POOL_SIZE)
+    /**
+     * JMH complains that some threads continue running
+     */
+    private var daemonThreadFactory = ThreadFactory { runnable ->
+        Thread(runnable).apply {
+            isDaemon = true
+        }
+    }
+
+    private val classicThreadPool = Executors.newScheduledThreadPool(THREAD_POOL_SIZE, daemonThreadFactory)
     private val greenThreadPool = Executors.newVirtualThreadPerTaskExecutor()
 
     private val classicThreadDispatcher = classicThreadPool.asCoroutineDispatcher()
