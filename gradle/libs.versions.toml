@@ -1,8 +1,10 @@
 [versions]
 jmh = "1.37"
+kotlin = "1.9.21"
 
 [libraries]
+coroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.8.0"
 
 [plugins]
 me-champeau-jmh = { id = "me.champeau.jmh", version = "0.7.2" }
-com-github-ben-manes-versions = { id = "com.github.ben-manes.versions", version = "0.50.0" }
+com-github-ben-manes-versions = { id = "com.github.ben-manes.versions", version = "0.51.0" }

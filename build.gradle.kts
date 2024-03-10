@@ -1,6 +1,6 @@
 plugins {
     java
-    kotlin("jvm") version embeddedKotlinVersion
+    kotlin("jvm") version libs.versions.kotlin.get()
     alias(libs.plugins.me.champeau.jmh)
     alias(libs.plugins.com.github.ben.manes.versions)
 }
@@ -14,6 +14,7 @@ repositories {
 }
 
 dependencies {
+    api(libs.coroutines)
     api(kotlin("stdlib"))
 }
 
