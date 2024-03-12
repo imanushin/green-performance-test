@@ -34,4 +34,4 @@ jobs:
         uses: gradle/gradle-build-action@v2
         with:
           gradle-home-cache-cleanup: true
-          arguments: build --stacktrace --info
+          arguments: build detekt --stacktrace --info

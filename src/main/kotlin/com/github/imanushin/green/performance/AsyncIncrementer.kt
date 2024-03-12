@@ -33,7 +33,7 @@ object AsyncIncrementer {
     private fun runThread(executorService: ExecutorService): Int {
         return executorService.submit<Int> {
             var index = 0
-            (0..NUMBER_OF_DELAYS).forEach { _ ->
+            repeat(NUMBER_OF_DELAYS) {
                 Thread.sleep(1)
                 index++
             }
@@ -45,7 +45,7 @@ object AsyncIncrementer {
         return runBlocking {
             withContext(coroutineDispatcher) {
                 var index = 0
-                (0..NUMBER_OF_DELAYS).forEach { _ ->
+                repeat(NUMBER_OF_DELAYS) {
                     delay(1)
                     index++
                 }

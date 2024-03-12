@@ -3,6 +3,7 @@ plugins {
     kotlin("jvm") version libs.versions.kotlin.get()
     alias(libs.plugins.me.champeau.jmh)
     alias(libs.plugins.com.github.ben.manes.versions)
+    alias(libs.plugins.io.gitlab.arturbosch.detekt)
 }
 
 kotlin {
@@ -24,4 +25,8 @@ dependencies {
 // 3. jmh plugin has huge classpath, to change GRADLE_HOME folder to short path, like C:\g\
 jmh {
     jmhVersion = libs.versions.jmh.get()
+}
+
+dependencies {
+    detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:${libs.versions.detekt.get()}")
 }
