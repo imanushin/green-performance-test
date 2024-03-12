@@ -8,9 +8,11 @@ import kotlinx.coroutines.asCoroutineDispatcher
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.withContext
+import java.lang.Thread.sleep
 import java.util.concurrent.ExecutorService
 
-object AsyncIncrementer {
+object AsyncIncrementerWithNestedMethods {
+
     private val classicThreadDispatcher = classicThreadPool.asCoroutineDispatcher()
     private val greenThreadDispatcher = greenThreadPool.asCoroutineDispatcher()
 
@@ -34,8 +36,7 @@ object AsyncIncrementer {
         return executorService.submit<Int> {
             var index = 0
             (0..NUMBER_OF_DELAYS).forEach { _ ->
-                Thread.sleep(1)
-                index++
+                index = sleepAndIncrement(index)
             }
             index
         }.get()
@@ -46,11 +47,20 @@ object AsyncIncrementer {
             withContext(coroutineDispatcher) {
                 var index = 0
                 (0..NUMBER_OF_DELAYS).forEach { _ ->
-                    delay(1)
-                    index++
+                    index = delayAndIncrement(index)
                 }
                 index
             }
         }
+    }
+
+    private suspend fun delayAndIncrement(index: Int): Int {
+        delay(1)
+        return index + 1
+    }
+
+    private fun sleepAndIncrement(index: Int): Int {
+        sleep(1)
+        return index + 1
     }
 }
