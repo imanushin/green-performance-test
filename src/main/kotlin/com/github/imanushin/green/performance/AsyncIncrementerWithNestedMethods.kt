@@ -35,7 +35,7 @@ object AsyncIncrementerWithNestedMethods {
     private fun runThread(executorService: ExecutorService): Int {
         return executorService.submit<Int> {
             var index = 0
-            (0..NUMBER_OF_DELAYS).forEach { _ ->
+            repeat(NUMBER_OF_DELAYS) {
                 index = sleepAndIncrement(index)
             }
             index
@@ -46,7 +46,7 @@ object AsyncIncrementerWithNestedMethods {
         return runBlocking {
             withContext(coroutineDispatcher) {
                 var index = 0
-                (0..NUMBER_OF_DELAYS).forEach { _ ->
+                repeat(NUMBER_OF_DELAYS) {
                     index = delayAndIncrement(index)
                 }
                 index
