@@ -26,3 +26,7 @@ dependencies {
 jmh {
     jmhVersion = libs.versions.jmh.get()
 }
+
+dependencies {
+    detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:${libs.versions.detekt.get()}")
+}
