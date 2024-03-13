@@ -1,0 +1,97 @@
+Benchmark                                                        Mode     Cnt    Score    Error  Units
+ToGreenOrNotToGreen.classicThread                               thrpt      25   77.978 ±  4.723  ops/s
+ToGreenOrNotToGreen.classicThreadWithNestedMethods              thrpt      25   70.863 ±  1.924  ops/s
+ToGreenOrNotToGreen.coroutineClassic                            thrpt      25  735.194 ±  6.992  ops/s
+ToGreenOrNotToGreen.coroutineClassicWithNestedMethods           thrpt      25  720.484 ±  7.233  ops/s
+ToGreenOrNotToGreen.coroutineGreen                              thrpt      25  698.360 ± 41.854  ops/s
+ToGreenOrNotToGreen.coroutineGreenWithNestedMethods             thrpt      25  644.895 ±  7.856  ops/s
+ToGreenOrNotToGreen.greenThread                                 thrpt      25  658.310 ± 11.760  ops/s
+ToGreenOrNotToGreen.greenThreadWithNestedMethods                thrpt      25  699.101 ± 32.665  ops/s
+ToGreenOrNotToGreen.classicThread                                avgt      25    1.311 ±  0.023   s/op
+ToGreenOrNotToGreen.classicThreadWithNestedMethods               avgt      25    1.323 ±  0.044   s/op
+ToGreenOrNotToGreen.coroutineClassic                             avgt      25    0.139 ±  0.001   s/op
+ToGreenOrNotToGreen.coroutineClassicWithNestedMethods            avgt      25    0.139 ±  0.001   s/op
+ToGreenOrNotToGreen.coroutineGreen                               avgt      25    0.159 ±  0.001   s/op
+ToGreenOrNotToGreen.coroutineGreenWithNestedMethods              avgt      25    0.148 ±  0.011   s/op
+ToGreenOrNotToGreen.greenThread                                  avgt      25    0.142 ±  0.011   s/op
+ToGreenOrNotToGreen.greenThreadWithNestedMethods                 avgt      25    0.146 ±  0.006   s/op
+ToGreenOrNotToGreen.classicThread                              sample   19564    1.272 ±  0.002   s/op
+ToGreenOrNotToGreen.classicThread:p0.00                        sample            1.070            s/op
+ToGreenOrNotToGreen.classicThread:p0.50                        sample            1.286            s/op
+ToGreenOrNotToGreen.classicThread:p0.90                        sample            1.342            s/op
+ToGreenOrNotToGreen.classicThread:p0.95                        sample            1.390            s/op
+ToGreenOrNotToGreen.classicThread:p0.99                        sample            1.546            s/op
+ToGreenOrNotToGreen.classicThread:p0.999                       sample            1.550            s/op
+ToGreenOrNotToGreen.classicThread:p0.9999                      sample            1.552            s/op
+ToGreenOrNotToGreen.classicThread:p1.00                        sample            1.552            s/op
+ToGreenOrNotToGreen.classicThreadWithNestedMethods             sample   16148    1.535 ±  0.001   s/op
+ToGreenOrNotToGreen.classicThreadWithNestedMethods:p0.00       sample            1.269            s/op
+ToGreenOrNotToGreen.classicThreadWithNestedMethods:p0.50       sample            1.544            s/op
+ToGreenOrNotToGreen.classicThreadWithNestedMethods:p0.90       sample            1.552            s/op
+ToGreenOrNotToGreen.classicThreadWithNestedMethods:p0.95       sample            1.554            s/op
+ToGreenOrNotToGreen.classicThreadWithNestedMethods:p0.99       sample            1.556            s/op
+ToGreenOrNotToGreen.classicThreadWithNestedMethods:p0.999      sample            1.571            s/op
+ToGreenOrNotToGreen.classicThreadWithNestedMethods:p0.9999     sample            1.576            s/op
+ToGreenOrNotToGreen.classicThreadWithNestedMethods:p1.00       sample            1.577            s/op
+ToGreenOrNotToGreen.coroutineClassic                           sample  173782    0.143 ±  0.001   s/op
+ToGreenOrNotToGreen.coroutineClassic:p0.00                     sample            0.117            s/op
+ToGreenOrNotToGreen.coroutineClassic:p0.50                     sample            0.143            s/op
+ToGreenOrNotToGreen.coroutineClassic:p0.90                     sample            0.144            s/op
+ToGreenOrNotToGreen.coroutineClassic:p0.95                     sample            0.146            s/op
+ToGreenOrNotToGreen.coroutineClassic:p0.99                     sample            0.148            s/op
+ToGreenOrNotToGreen.coroutineClassic:p0.999                    sample            0.232            s/op
+ToGreenOrNotToGreen.coroutineClassic:p0.9999                   sample            0.284            s/op
+ToGreenOrNotToGreen.coroutineClassic:p1.00                     sample            0.295            s/op
+ToGreenOrNotToGreen.coroutineClassicWithNestedMethods          sample  175138    0.142 ±  0.001   s/op
+ToGreenOrNotToGreen.coroutineClassicWithNestedMethods:p0.00    sample            0.126            s/op
+ToGreenOrNotToGreen.coroutineClassicWithNestedMethods:p0.50    sample            0.142            s/op
+ToGreenOrNotToGreen.coroutineClassicWithNestedMethods:p0.90    sample            0.143            s/op
+ToGreenOrNotToGreen.coroutineClassicWithNestedMethods:p0.95    sample            0.143            s/op
+ToGreenOrNotToGreen.coroutineClassicWithNestedMethods:p0.99    sample            0.146            s/op
+ToGreenOrNotToGreen.coroutineClassicWithNestedMethods:p0.999   sample            0.148            s/op
+ToGreenOrNotToGreen.coroutineClassicWithNestedMethods:p0.9999  sample            0.148            s/op
+ToGreenOrNotToGreen.coroutineClassicWithNestedMethods:p1.00    sample            0.148            s/op
+ToGreenOrNotToGreen.coroutineGreen                             sample  153025    0.162 ±  0.001   s/op
+ToGreenOrNotToGreen.coroutineGreen:p0.00                       sample            0.129            s/op
+ToGreenOrNotToGreen.coroutineGreen:p0.50                       sample            0.163            s/op
+ToGreenOrNotToGreen.coroutineGreen:p0.90                       sample            0.164            s/op
+ToGreenOrNotToGreen.coroutineGreen:p0.95                       sample            0.164            s/op
+ToGreenOrNotToGreen.coroutineGreen:p0.99                       sample            0.165            s/op
+ToGreenOrNotToGreen.coroutineGreen:p0.999                      sample            0.166            s/op
+ToGreenOrNotToGreen.coroutineGreen:p0.9999                     sample            0.167            s/op
+ToGreenOrNotToGreen.coroutineGreen:p1.00                       sample            0.167            s/op
+ToGreenOrNotToGreen.coroutineGreenWithNestedMethods            sample  162725    0.153 ±  0.001   s/op
+ToGreenOrNotToGreen.coroutineGreenWithNestedMethods:p0.00      sample            0.127            s/op
+ToGreenOrNotToGreen.coroutineGreenWithNestedMethods:p0.50      sample            0.160            s/op
+ToGreenOrNotToGreen.coroutineGreenWithNestedMethods:p0.90      sample            0.164            s/op
+ToGreenOrNotToGreen.coroutineGreenWithNestedMethods:p0.95      sample            0.165            s/op
+ToGreenOrNotToGreen.coroutineGreenWithNestedMethods:p0.99      sample            0.165            s/op
+ToGreenOrNotToGreen.coroutineGreenWithNestedMethods:p0.999     sample            0.166            s/op
+ToGreenOrNotToGreen.coroutineGreenWithNestedMethods:p0.9999    sample            0.168            s/op
+ToGreenOrNotToGreen.coroutineGreenWithNestedMethods:p1.00      sample            0.168            s/op
+ToGreenOrNotToGreen.greenThread                                sample  163342    0.152 ±  0.001   s/op
+ToGreenOrNotToGreen.greenThread:p0.00                          sample            0.121            s/op
+ToGreenOrNotToGreen.greenThread:p0.50                          sample            0.155            s/op
+ToGreenOrNotToGreen.greenThread:p0.90                          sample            0.161            s/op
+ToGreenOrNotToGreen.greenThread:p0.95                          sample            0.162            s/op
+ToGreenOrNotToGreen.greenThread:p0.99                          sample            0.163            s/op
+ToGreenOrNotToGreen.greenThread:p0.999                         sample            0.163            s/op
+ToGreenOrNotToGreen.greenThread:p0.9999                        sample            0.164            s/op
+ToGreenOrNotToGreen.greenThread:p1.00                          sample            0.165            s/op
+ToGreenOrNotToGreen.greenThreadWithNestedMethods               sample  159425    0.156 ±  0.001   s/op
+ToGreenOrNotToGreen.greenThreadWithNestedMethods:p0.00         sample            0.123            s/op
+ToGreenOrNotToGreen.greenThreadWithNestedMethods:p0.50         sample            0.156            s/op
+ToGreenOrNotToGreen.greenThreadWithNestedMethods:p0.90         sample            0.161            s/op
+ToGreenOrNotToGreen.greenThreadWithNestedMethods:p0.95         sample            0.162            s/op
+ToGreenOrNotToGreen.greenThreadWithNestedMethods:p0.99         sample            0.163            s/op
+ToGreenOrNotToGreen.greenThreadWithNestedMethods:p0.999        sample            0.163            s/op
+ToGreenOrNotToGreen.greenThreadWithNestedMethods:p0.9999       sample            0.164            s/op
+ToGreenOrNotToGreen.greenThreadWithNestedMethods:p1.00         sample            0.164            s/op
+ToGreenOrNotToGreen.classicThread                                  ss       5    0.865 ±  0.008   s/op
+ToGreenOrNotToGreen.classicThreadWithNestedMethods                 ss       5    0.864 ±  0.019   s/op
+ToGreenOrNotToGreen.coroutineClassic                               ss       5    0.180 ±  0.013   s/op
+ToGreenOrNotToGreen.coroutineClassicWithNestedMethods              ss       5    0.176 ±  0.017   s/op
+ToGreenOrNotToGreen.coroutineGreen                                 ss       5    0.208 ±  0.015   s/op
+ToGreenOrNotToGreen.coroutineGreenWithNestedMethods                ss       5    0.208 ±  0.016   s/op
+ToGreenOrNotToGreen.greenThread                                    ss       5    0.166 ±  0.006   s/op
+ToGreenOrNotToGreen.greenThreadWithNestedMethods                   ss       5    0.168 ±  0.016   s/op
