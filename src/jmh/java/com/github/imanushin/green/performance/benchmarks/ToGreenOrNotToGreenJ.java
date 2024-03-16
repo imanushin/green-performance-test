@@ -14,22 +14,22 @@ import org.openjdk.jmh.annotations.Warmup;
 @Measurement
 public class ToGreenOrNotToGreenJ {
     @Benchmark
-    int classicThread() {
+    public int classicThread() {
         return AsyncIncrementerJ.classicThread();
     }
 
     @Benchmark
-    int greenThread() {
+    public int greenThread() {
         return AsyncIncrementerJ.greenThread();
     }
 
     @Benchmark
-    int classicThreadAsync() {
+    public int classicThreadAsync() {
         return AsyncIncrementerJ.classicThreadAsync();
     }
 
     @Benchmark
-    int greenThreadAsync() {
+    public int greenThreadAsync() {
         return AsyncIncrementerJ.greenThreadAsync();
     }
 }
