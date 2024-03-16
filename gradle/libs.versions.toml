@@ -4,10 +4,11 @@ kotlin = "1.9.21"
 detekt = "1.23.5"
 
 [libraries]
-coroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.8.0"
-jupiter = "org.junit.jupiter:junit-jupiter:5.10.2"
+coroutines = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version = "1.8.0" }
+jupiter = { module = "org.junit.jupiter:junit-jupiter", version = "5.10.2" }
 
 [plugins]
+org-jetbrains-kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 me-champeau-jmh = { id = "me.champeau.jmh", version = "0.7.2" }
 com-github-ben-manes-versions = { id = "com.github.ben-manes.versions", version = "0.51.0" }
 io-gitlab-arturbosch-detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
