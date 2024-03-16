@@ -1,6 +1,6 @@
 plugins {
     java
-    kotlin("jvm") version libs.versions.kotlin.get()
+    alias(libs.plugins.org.jetbrains.kotlin.jvm)
     alias(libs.plugins.me.champeau.jmh)
     alias(libs.plugins.com.github.ben.manes.versions)
     alias(libs.plugins.io.gitlab.arturbosch.detekt)
