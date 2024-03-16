@@ -5,11 +5,11 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.TimeUnit;
-import java.util.stream.Stream;
 
 import static com.github.imanushin.green.performance.Constants.NUMBER_OF_DELAYS;
 import static com.github.imanushin.green.performance.TestExecutors.classicThreadPool;
 import static com.github.imanushin.green.performance.TestExecutors.greenThreadPool;
+import static java.util.concurrent.CompletableFuture.completedFuture;
 
 public final class AsyncIncrementerJ {
     private static final Executor DELAYED_CLASSIC = CompletableFuture.delayedExecutor(1, TimeUnit.MILLISECONDS, classicThreadPool);
@@ -32,13 +32,10 @@ public final class AsyncIncrementerJ {
     }
 
     private static int runAsync(Executor executor) {
-        final var future = Stream.iterate(0, x -> x < NUMBER_OF_DELAYS, x -> x + 1)
-                .map(x -> CompletableFuture.supplyAsync(() -> x, executor))
-                .reduce((xFuture, yFuture) -> xFuture.thenCombine(yFuture, (x, y) -> y));
+        final var last = addNumbersRecursive(0, executor);
 
         try {
-            //noinspection OptionalGetWithoutIsPresent
-            return future.get().get();
+            return last.get();
         } catch (InterruptedException | ExecutionException e) {
             throw new RuntimeException(e);
         }
@@ -64,6 +61,15 @@ public final class AsyncIncrementerJ {
             return future.get();
         } catch (InterruptedException | ExecutionException e) {
             throw new RuntimeException(e);
+        }
+    }
+
+    private static CompletableFuture<Integer> addNumbersRecursive(final int index, final Executor delayedExecutor) {
+        if (index < NUMBER_OF_DELAYS) {
+            return CompletableFuture.supplyAsync(() -> index + 1, delayedExecutor) // wait and add in one call
+                    .thenCompose(current -> addNumbersRecursive(current, delayedExecutor));
+        } else {
+            return completedFuture(index);
         }
     }
 }
