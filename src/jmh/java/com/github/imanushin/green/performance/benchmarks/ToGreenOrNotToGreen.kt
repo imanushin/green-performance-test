@@ -8,50 +8,49 @@ import org.openjdk.jmh.annotations.Measurement
 import org.openjdk.jmh.annotations.Mode
 import org.openjdk.jmh.annotations.Threads
 import org.openjdk.jmh.annotations.Warmup
-import org.openjdk.jmh.infra.Blackhole
 
-@BenchmarkMode(Mode.All)
+@BenchmarkMode(Mode.Throughput)
 @Threads(100)
 @Warmup
 @Measurement
 open class ToGreenOrNotToGreen {
     @Benchmark
-    fun coroutineClassic(blackhole: Blackhole) {
-        blackhole.consume(AsyncIncrementer.coroutineClassic())
+    fun coroutineClassic(): Int {
+        return AsyncIncrementer.coroutineClassic()
     }
 
     @Benchmark
-    fun coroutineGreen(blackhole: Blackhole) {
-        blackhole.consume(AsyncIncrementer.coroutineGreen())
+    fun coroutineGreen(): Int {
+        return AsyncIncrementer.coroutineGreen()
     }
 
     @Benchmark
-    fun classicThread(blackhole: Blackhole) {
-        blackhole.consume(AsyncIncrementer.classicThread())
+    fun classicThread(): Int {
+        return AsyncIncrementer.classicThread()
     }
 
     @Benchmark
-    fun greenThread(blackhole: Blackhole) {
-        blackhole.consume(AsyncIncrementer.greenThread())
+    fun greenThread(): Int {
+        return AsyncIncrementer.greenThread()
     }
 
     @Benchmark
-    fun coroutineClassicWithNestedMethods(blackhole: Blackhole) {
-        blackhole.consume(AsyncIncrementerWithNestedMethods.coroutineClassic())
+    fun coroutineClassicWithNestedMethods(): Int {
+        return AsyncIncrementerWithNestedMethods.coroutineClassic()
     }
 
     @Benchmark
-    fun coroutineGreenWithNestedMethods(blackhole: Blackhole) {
-        blackhole.consume(AsyncIncrementerWithNestedMethods.coroutineGreen())
+    fun coroutineGreenWithNestedMethods(): Int {
+        return AsyncIncrementerWithNestedMethods.coroutineGreen()
     }
 
     @Benchmark
-    fun classicThreadWithNestedMethods(blackhole: Blackhole) {
-        blackhole.consume(AsyncIncrementerWithNestedMethods.classicThread())
+    fun classicThreadWithNestedMethods(): Int {
+        return AsyncIncrementerWithNestedMethods.classicThread()
     }
 
     @Benchmark
-    fun greenThreadWithNestedMethods(blackhole: Blackhole) {
-        blackhole.consume(AsyncIncrementerWithNestedMethods.greenThread())
+    fun greenThreadWithNestedMethods(): Int {
+        return AsyncIncrementerWithNestedMethods.greenThread()
     }
 }
