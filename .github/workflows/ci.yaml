@@ -35,3 +35,9 @@ jobs:
         with:
           gradle-home-cache-cleanup: true
           arguments: build detekt --stacktrace --info
+
+      - name: Upload coverage reports to Codecov
+        uses: codecov/codecov-action@v4.0.1
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          slug: imanushin/green-performance-test
