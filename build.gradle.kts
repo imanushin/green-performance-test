@@ -17,6 +17,9 @@ repositories {
 dependencies {
     api(libs.coroutines)
     api(kotlin("stdlib"))
+
+    testRuntimeOnly(kotlin("reflect")) // to see function names in tests
+    testImplementation(libs.jupiter)
 }
 
 // there are several issues with JMH plugin on Windows (it doesn't have fork method, so jmh tries to simulates that):
@@ -29,4 +32,8 @@ jmh {
 
 dependencies {
     detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:${libs.versions.detekt.get()}")
+}
+
+tasks.named<Test>("test") {
+    useJUnitPlatform()
 }
