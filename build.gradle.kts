@@ -1,5 +1,6 @@
 plugins {
     java
+    jacoco
     alias(libs.plugins.org.jetbrains.kotlin.jvm)
     alias(libs.plugins.me.champeau.jmh)
     alias(libs.plugins.com.github.ben.manes.versions)
@@ -36,4 +37,12 @@ dependencies {
 
 tasks.named<Test>("test") {
     useJUnitPlatform()
+    finalizedBy(tasks.jacocoTestReport) // report is always generated after tests run
+}
+
+tasks.jacocoTestReport {
+    reports {
+        xml.required = true
+        html.required = false
+    }
 }
