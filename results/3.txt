@@ -1,0 +1,13 @@
+Benchmark                                               Mode  Cnt    Score    Error  Units
+ToGreenOrNotToGreen.classicThread                      thrpt   25   74.647 ±  3.175  ops/s
+ToGreenOrNotToGreen.classicThreadWithNestedMethods     thrpt   25   71.602 ±  2.252  ops/s
+ToGreenOrNotToGreen.coroutineClassic                   thrpt   25  719.398 ± 19.088  ops/s
+ToGreenOrNotToGreen.coroutineClassicWithNestedMethods  thrpt   25  723.776 ±  8.364  ops/s
+ToGreenOrNotToGreen.coroutineGreen                     thrpt   25  653.818 ±  1.456  ops/s
+ToGreenOrNotToGreen.coroutineGreenWithNestedMethods    thrpt   25  651.648 ±  2.111  ops/s
+ToGreenOrNotToGreen.greenThread                        thrpt   25  666.491 ±  3.853  ops/s
+ToGreenOrNotToGreen.greenThreadWithNestedMethods       thrpt   25  671.113 ± 23.466  ops/s
+ToGreenOrNotToGreenJ.classicThread                     thrpt   25   74.071 ±  0.297  ops/s
+ToGreenOrNotToGreenJ.classicThreadAsync                thrpt   25  773.398 ±  5.053  ops/s
+ToGreenOrNotToGreenJ.greenThread                       thrpt   25  655.415 ±  1.123  ops/s
+ToGreenOrNotToGreenJ.greenThreadAsync                  thrpt   25  768.817 ±  5.035  ops/s
