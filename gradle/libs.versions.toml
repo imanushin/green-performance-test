@@ -1,6 +1,6 @@
 [versions]
 jmh = "1.37"
-kotlin = "1.9.21"
+kotlin = "1.9.23"
 detekt = "1.23.5"
 
 [libraries]
