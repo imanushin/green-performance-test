@@ -7,7 +7,10 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadFactory;
 
 final class TestExecutors {
-    private static final int THREAD_POOL_SIZE = 10;
+    /**
+     * Create a very big thread pool to avoid waiting for free thread.
+     */
+    private static final int THREAD_POOL_SIZE = 1000;
 
     /**
      * JMH complains that some threads continue running
@@ -22,5 +25,5 @@ final class TestExecutors {
     };
 
     static final ExecutorService classicThreadPool = Executors.newScheduledThreadPool(THREAD_POOL_SIZE, daemonThreadFactory);
-    static final ExecutorService  greenThreadPool = Executors.newVirtualThreadPerTaskExecutor();
+    static final ExecutorService greenThreadPool = Executors.newVirtualThreadPerTaskExecutor();
 }
