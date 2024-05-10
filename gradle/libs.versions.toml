@@ -4,7 +4,7 @@ kotlin = "1.9.23"
 detekt = "1.23.6"
 
 [libraries]
-coroutines = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version = "1.8.0" }
+coroutines = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version = "1.8.1" }
 jupiter = { module = "org.junit.jupiter:junit-jupiter", version = "5.10.2" }
 
 [plugins]
