@@ -1,7 +1,7 @@
 [versions]
 jmh = "1.37"
 kotlin = "1.9.25"
-detekt = "1.23.6"
+detekt = "1.23.7"
 
 [libraries]
 coroutines = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version = "1.8.0" }
