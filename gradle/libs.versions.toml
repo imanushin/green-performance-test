@@ -10,5 +10,5 @@ jupiter = { module = "org.junit.jupiter:junit-jupiter", version = "5.10.3" }
 [plugins]
 org-jetbrains-kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 me-champeau-jmh = { id = "me.champeau.jmh", version = "0.7.2" }
-com-github-ben-manes-versions = { id = "com.github.ben-manes.versions", version = "0.51.0" }
+com-github-ben-manes-versions = { id = "com.github.ben-manes.versions", version = "0.62.0" }
 io-gitlab-arturbosch-detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
